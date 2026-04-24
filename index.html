@@ -39,27 +39,7 @@
       src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
   </noscript>
 
-  <!-- ============================================================
-       ★ TikTok Pixel 追蹤碼
-       取得方式：TikTok Ads Manager → 資產 → Events → Web Events → 建立 Pixel
-       請將 YOUR_TIKTOK_PIXEL_ID 換成你的 ID
-  ============================================================ -->
-  <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
-      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
-      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
-      for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
-      ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
-      ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
-      var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;
-      var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-      ttq.load('YOUR_TIKTOK_PIXEL_ID');
-      ttq.page();
-    }(window, document, 'ttq');
-  </script>
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
@@ -151,6 +131,15 @@
       letter-spacing: 0.12em;
       color: var(--dark);
       margin-bottom: 8px;
+    }
+
+    .brand-subname {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      margin-bottom: 10px;
     }
 
     .brand-tagline {
@@ -290,14 +279,15 @@
     <div class="avatar-text">美</div>
 
     <!-- ★ 換成你的店名 -->
-    <h1 class="brand-name">Lazy Sister</h1>
+    <h1 class="brand-name">懶姊姊美學研究社</h1>
+    <p class="brand-subname">LAZY SISTER</p>
 
     <!-- ★ 換成你的定位 / 所在地 -->
     <p class="brand-tagline">屏東．專業純手工無痛針清</p>
   </div>
 
   <!-- ★ 換成你想放的短句，或刪掉這段 -->
-  <p class="quote">「讓每一次保養<br>都成為給自己的禮物」</p>
+  <p class="quote">屏東美容｜專業純手工無痛針清技術 🌸跟著懶姊姊一起精簡護膚🌸 ■想學技術 可詢問闆娘 ■完全採預約制</p>
 
   <!-- ── 主要連結 ── -->
   <p class="section-label">立即預約</p>
@@ -310,17 +300,6 @@
       <div class="link-text">
         <div class="link-label">LINE 預約</div>
         <div class="link-sub">點此加入官方帳號</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <!-- ★ 換成你的電話 -->
-    <a class="link-card" href="tel:+886XXXXXXXXX"
-       onclick="trackClick('phone_call')">
-      <div class="link-icon">📞</div>
-      <div class="link-text">
-        <div class="link-label">電話預約</div>
-        <div class="link-sub">0X-XXXX-XXXX</div>
       </div>
       <span class="link-arrow">›</span>
     </a>
@@ -351,17 +330,6 @@
       <div class="link-text">
         <div class="link-label">Facebook</div>
         <div class="link-sub">粉絲專頁</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <!-- ★ 換成你的 TikTok 連結 -->
-    <a class="link-card" href="https://www.tiktok.com/@YOUR_HANDLE" target="_blank"
-       onclick="trackClick('tiktok')">
-      <div class="link-icon">🎵</div>
-      <div class="link-text">
-        <div class="link-label">TikTok</div>
-        <div class="link-sub">@your_handle</div>
       </div>
       <span class="link-arrow">›</span>
     </a>
@@ -423,10 +391,6 @@
     // Meta Pixel 事件
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Lead', { content_name: buttonName });
-    }
-    // TikTok Pixel 事件
-    if (typeof ttq !== 'undefined') {
-      ttq.track('ClickButton', { content_name: buttonName });
     }
   }
 </script>
